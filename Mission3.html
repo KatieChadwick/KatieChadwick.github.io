@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<title> To do list app </title>
+
+	<style>
+		input[type="button"] {
+			background-color: pink;
+			font-size: 20pt;
+		}
+		input[type="text"] {
+			background-color: white;
+			font-size: 20pt;
+		}
+
+		body {
+			padding: 30px;
+		}
+	</style>
+
+	<script>
+		// create new item function
+		function addItem() {
+			var newItem = document.createElement("div");
+			newItem.innerHTML = document.getElementById("box").value
+			newItem.onclick = removeItem;
+			document.getElementById("list").appendChild(newItem);
+			saveList();
+		}
+		
+		// delete item function (called in addItem)
+		function removeItem() {
+			document.getElementById("list").removeChild(this);
+			saveList();
+		}
+		
+		// save and rememeber list created
+		function saveList() {
+			localStorage.storedList = document.getElementById("list").innerHTML;
+		}
+
+		//load to do list
+		function loadList() {
+			document.getElementById("list").innerHTML = localStorage.storedList
+			for (var i=0; i < list.children.length; i++) {
+				list.children[i].onclick = removeItem;
+			}
+		} 
+		
+	</script>
+
+</head>
+
+
+<body>
+	<div style = "background-color: lightblue; font-size: 50pt; text-align: center;">
+		To do list
+	</div>
+	<br/>
+
+	<div style = "background-color: DarkSeaGreen; font-size: 20pt; text-align: left; height: 100%">
+	To Do List
+	<br/>
+	<! –– create a text box and button to click ––>
+	<input type = "text" id="box" value="Type here to add task"/>
+	<br/>
+	<!-- Add task to the list -->
+	<input type= "button" value="Add item" onclick = "addItem();"/>
+	<br/>
+	<div id="list"></div>
+	
+	<script>
+		if(localStorage.storedList) {
+			loadList();
+		}
+	</script>
+
+	</div>
+
+
+</body>
+</html>

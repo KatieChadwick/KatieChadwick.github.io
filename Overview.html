@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+
+<! –– tells browser what version of HTML to code in, that we have used HTLM ––>
+
+<head>
+<! –– not shown on the web page ––>
+	<title>
+		Title shows in the header
+	</title>
+
+
+	<! –– CSS classes can be made to simplify code ––>
+	<! –– these are made in the head section, using style and setting a name and characteristics ––>
+	<! –– can change all properties of p for consistent formating throughout too ––>
+	
+	<style>
+		.text {
+			text-align: center;
+			font-size: 18pt;
+			background-color: aqua;
+		}
+
+		p {
+			font-size: 16pt;
+			text-align: centre;
+		}
+
+	</style>
+
+
+
+</head>
+
+<body>
+<! –– content shown on the web page ––>
+	<p> p makes a prargraph </br>
+	<p> br can be used to add a line break </p>
+	<img src="https://getcodingkids.com/wp-content/themes/coding-for-kids/images/laptop-code1x.png", alt = "name image"/>
+	<! –– img is a self-closing tag ––>
+
+	<div style = "color: green;">
+		<! –– division (div) can split web page into sections. ––>
+		<! –– group elements within a div to make the same changes to all the elements 
+		<p> this text is set to be green </p>
+	</div>
+	<p> whereas this text is outside it </p>
+
+	<! –– CSS can be used to change HTLML elements ––>
+	<! –– CSS needs a property (what text you want to change) and a value (what you want to change it to) ––>
+
+	<div style = "background-color: green;">
+		<p> Using CSS to change background colour to green </p>
+		<p> using div, it is applied to the whole block </p>
+	</div>
+	<p style = "background-color: red;"> using p instead of div, it can be applied to a single line </p>
+
+	<! –– CSS properties include:
+		background-color
+		color
+		text-align - left, right, centre
+		font-size - 12px, 20pt
+		float - position of element of another element - left, right, none
+		height - 100px, 100%
+		width
+		border - 1 px solid black
+		margin - 10px
+		padding - 10px
+	––>
+
+	<div style = "text-align:center;">
+		This text is moved to the center moving text-align
+	</div>
+
+	<div style = "background-color: lightblue; float: right;">
+		Can add background color and float location
+	</div>
+	<div style = "background-color: plum; height:300px; width: 100px;">
+		Can change colour, height and width of text box with 100px
+		Using pixels, the height and width will always stay the same even with brower size changes
+	</div>
+	<div style = "background-color: green; height:75%; width: 70%; font-size:25pt; text-align: right;">
+		<p> Can change location, height and width by percentage of screen it fills </p>
+		This will change based on the browser size used
+		<br/>
+	</div>
+	<div style = "border: 4px dotted green; margin: 50px; padding: 25px; float: right;">
+		<p> Can make a border around text </p>
+		adds padding (between text and box) and margin (between page edge and box)
+	</div>
+
+
+	<! –– CSS classes can be made to simplify code ––>
+	<! –– you can call to CSS classes made in the head section, and you can use multiple at once ––>
+	<p class="text"> using class="text" calls to the text CSS class </p>
+	
+
+	<! –– hyperlinks are created using a ––>
+	<p> <a href="https://www.google.co.uk"> Hyperlink Text  to Google </a> </p>
+	<a href="https://www.facebook.com"> Hyperlink Text  to Facebook </a>
+
+
+
+	<! –– Using JavaScript ––>
+	<script>
+		// alert function using the "" text argument to make a pop-up
+		alert("Using alert creates a text pop-up");
+		
+		// alert function using the a variables argument to make a pop-up 
+		var variable = "Variable pop-up!"; 
+		alert(variable);
+
+		// alert function using numbers in the argument to make a pop-up
+		alert(2+1);
+
+		// creating if and else statements
+		if(variable == "Variable") {
+			alert("This is how to create an if statement");
+		}
+		else {
+			alert("This is how to create else statements");
+		}
+
+		// creating functions
+		function callFunction() {
+			alert("calling function");
+		}
+		callFunction();
+		
+		function sayHello(name) {
+			alert("Hello" + name);
+		}
+		sayHello("Katie");
+		
+
+		// return statements
+		function returnStatement() {
+			return "This is a return statement"; 
+		}
+		var statement = returnStatement();
+		alert(statement);		
+	
+	</script>
+		
+	<! –– onclick attributes are added so users can click on elements on a page ––>
+	<p onclick = "alert('pop-up created using alert');">
+		click here for a pop-up to come up using onclick and alert function 
+	</p>
+
+	<p>
+	<! –– onclick attributes can be used in conjunction with hyperlinks ––>
+	<a href = "https://www.google.co.uk", onclick = "return false;"> 
+		Click here to visit google - onclick, the return is made false
+	</a>
+	</p>	
+
+	<a href = "https://www.google.co.uk", onclick = "alert('Redirecting to Google');"> 
+		Click here to visit google - onclick, pop-up is initiated 
+	</a>
+
+
+	<! –– input tags ––>
+	<p> Create input box: <input id="inputBox1" type"text"/> </p>
+		
+	<! –– input tags can be text, password, button, checkbox ––>
+	<! –– input id can then be called later on ––>
+
+	<script>
+
+		var inputBox1 = document.getElementById("inputBox1");
+		var inputBox1Text = inputBox1.value;
+	
+	</script>
+	
+	<p onclick = "alert(inputBox1Text);"> 
+		fill in box and click for pop up - cant get to work atm :( </p>
+
+	
+	<! –– Document object model and APIs ––>
+	<! –– DOM and API are built in functions ––>
+	<! –– DOM's functions can make changes and reacts to the web-page, allowing interactivity ––>
+	<! -- DOM_keyword. calls to the DOM built in functions (as done in script above) --> 
+
+	<div id="list"> Create a list pop up </div>
+	
+	<script> 
+		var showList = document.getElementById("list");
+		alert(showList.innerHTML);
+
+		// createElement makes a new HTML element -->
+		document.createElement("div"); 	
+
+		//appendChild to edit exisitng HTML element 
+		var newDiv = document.createElement("div");
+		newDiv.innterHTML = "ElementToAdd"
+		document.body.appendChild(newDiv);	
+	</script> 
+
+
+
+</body>
+
+</html>
